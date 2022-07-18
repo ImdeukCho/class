@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 1. id=a 값 출력(jquery방식)
+		console.log( $("#a").text()); // text()
+		// 1-1. javaScript코드
+		var data = document.getElementById("a");
+		console.log(data.innerText); // innerText
+		// 2. id=a 값을 변경
+		$("#a").text("=================");
+		// 3. id=a2의 스타일을 변경
+		$("#a2").css("color","red");
+		
+
+		$("#a2").css("color","red");
+		console.log($("#a2").innerText); // undefined
+		console.log("text() : ", $("#a2").text()); // innerText대신 text()사용
+		$("#a").text("=============="); // innerText="========" 이 아닌 text()사용
+		$("#a").innerText="aaaaaa";
+	});
+</script>
+</head>
+<body>
+	<p id="a">Hello</p>
+	<p id="a2">Hello2</p>
+	<div id="b">World</div>
+	<span id="c">test</span>
+</body>
+</html>

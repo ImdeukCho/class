@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 1차 필터링 후 2차 선택자와 일치하는 요소가 있으면 true 없는경우 false
+		var x = $("li").is(".my");
+		console.log(x);
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<ul>
+	 <li>A1</li>
+	 <li>A2</li>
+	 <li class="my">A3</li>
+	 <li>A4</li>
+	 <li id="a">A5</li>
+	 <li>A6</li>
+	 <li>A7</li>
+	 <li>A8</li>
+	</ul>
+	
+	
+</body>
+</html>

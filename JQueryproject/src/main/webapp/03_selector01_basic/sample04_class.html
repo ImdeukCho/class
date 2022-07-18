@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	var data = $(".myClass");
+	console.log(data); // fn배열 - 배열 자체에 jquery 함수 사용
+	console.log(data[0]); // tag 출력 , innerText, innerHtml, value, getAttribute 그대로 사용
+	$(".myClass").css("color","red");
+	console.log("첫번째 myClass>>",$(".myClass"));
+	console.log("첫번째 myClass>>",$(".myClass").first());
+	console.log("첫번째 myClass>>",$(".myClass").first().text()); // 첫번쨰
+	console.log("첫번째 myClass>>",$(".myClass")[0].innerText); // 첫번째
+	console.log("첫번째 myClass>>",$(".myClass").last().text()); // 마지막
+	
+	// .myClass3개의 text 내용을 콘솔에 출력(for문 이용)
+	console.log($(".myClass")[0].innerText,$(".myClass")[1].innerText,$(".myClass")[2].innerText);
+	// 1. for문
+	var myClass = $(".myClass");
+	for (var i = 0; i < myClass.length; i++) {
+		console.log(myClass[i].innerText);
+	}
+	// 2. forof
+	var data = $(".myClass");
+	for (let d of data) {
+		console.log(d.innerText);
+		console.log($(d).text());
+	}
+	
+});
+</script>
+</head>
+<body>
+	<p class="notMe">div class="notMe"</p>
+	<p class="myClass">p class="myClass1"</p>
+	<div class="myClass">div class="myClass2"</div>
+	<div class="myClass">div class="myClass3"</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// parent .. s아님 바로 위 부모선택 여러개 선택가능, 배열로 반환
+		$("p").parent().css("color","red");
+		$("p").parent("#my").css("font-size","40px");
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<div>
+		A
+		<div>
+			B
+			<p>C</p>
+		</div>
+	</div>
+	<div id="my">
+		<p>D</p>
+	</div>
+
+		
+</body>
+</html>

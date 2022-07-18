@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#d").val("test");
+		$("#c").text("test");
+		$("#b").html("<u>test</u>"); // 값을 test로 변경하면서 밑줄추가(<u>) , innerHTML 대신 사용
+		
+		//id e의 value값 출력
+		console.log($("#e").val()); 
+		var data = $("#e").attr("value"); // attr로도 value값 가져올수있다.
+		console.log(data);
+		 $("#e").attr("value","~~~~~~~~~~"); // attr로 변경가능
+	});
+</script>
+</head>
+<body>
+	<p id="a">Hello</p>
+	<p id="a2">Hello2</p>
+	<div id="b">World</div>
+	<span id="c">aaa</span><br>
+	<input type="text" id="d" ><br>
+	<input type="text" id="e" value="test">
+</body>
+</html>

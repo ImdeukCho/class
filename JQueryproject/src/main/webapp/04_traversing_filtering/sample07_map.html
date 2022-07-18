@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 1차 이후 가공해서 배열로 변환
+		var arr = $("li").map(function(idx, ele) {	// .map() : 배열로 변환
+			console.log("this >>>",this,"ele >>>",ele,"ele.innerText >>>",ele.innerText,"$(this).text() >>>",$(this).text())
+			return $(this).text().toLowerCase();
+		});
+		console.log("arr >>>",arr);
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<ul>
+	 <li>A1</li>
+	 <li>A2</li>
+	 <li>A3
+	   <ul>
+	    <li>B1</li>
+	    <li>B2</li>
+	    <li>B3</li>
+	   </ul>
+	 </li>
+	 <li>A4</li>
+	</ul>
+	
+	
+</body>
+</html>

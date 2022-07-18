@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// li, p 모두 마지막 css가 적용됨
+		$("li").css("border","2px solid black").add("p").css("color","blue");
+		// 앞의 선은 li만 적용, 뒤의 색깔은 li,p 모두 적용
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<ul>
+	 <li>A1</li>
+	 <li>A2</li>
+	 <li>A3</li>
+	 <li>A4</li>
+	 <li>A5</li>
+	 <li>A6</li>
+	 <li>A7</li>
+	 <li>A8</li>
+	</ul>
+		
+</body>
+</html>

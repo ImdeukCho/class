@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 1차 이후 첫번째, 마지막 요소 반환
+		$("li").first().css("background-color","red");	// li중 제일 첫번째
+		$("li").last().css("color","blue");	// li중 제일 첫번째
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<ul>
+	 <li>A1</li>
+	 <li>A2</li>
+	 <li>A3
+	   <ul>
+	    <li>B1</li>
+	    <li>B2</li>
+	    <li>B3</li>
+	   </ul>
+	 </li>
+	 <li>A4</li>
+	</ul>
+	
+</body>
+</html>

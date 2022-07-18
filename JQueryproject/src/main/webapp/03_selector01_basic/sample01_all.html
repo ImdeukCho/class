@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$("*").css("color","red");	// document.querySelectorAll("*").style="" 와 동일
+	// css(속성이름, 속성값);
+	console.log(document.getElementsByTagName("p"));
+	// js코드와 jquery코드의 혼용 가능
+});
+</script>
+
+</head>
+<body>
+	<p>Hello</p>
+	<div>World</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+// 1차 검색결과를 기준으로 다시 2차필터링(함수사용), return 결과만 사용함
+	$(function() {
+		
+		/* $("li")
+			.filter(function(idx, ele) {	// 인덱스, 요소를 받음
+				console.log(idx,ele);		// javascript객체
+				console.log(this);			// 같은 결과 , 현재 매개변수로 선택된 dom요소
+			}); */
+		
+		// li태그 선택후 filter함수 이용 li의 idx, li글씨 출력
+		$("li")
+			.filter(function(idx, ele) {	// (i,e)로 변수명 변경가능
+				console.log(idx,ele.innerText);		
+				console.log(this.innerText);			
+				console.log($(this).text());	// jquery객체로 변환			
+				return ele.innerText=="A4";		// A4와 같은 요소 검색, 자바스크립트 명령을 사용
+			}).css("color","red")
+			.end()
+			.filter(function(idx, ele) {	// idx=0부터시작
+				return idx % 3 ==0;			// 0,3,6
+			}).css("font-size","40px").end();
+	});
+	
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<ul>
+	 <li>A1</li>
+	 <li>A2</li>
+	 <li class="my">A3</li>
+	 <li>A4</li>
+	 <li>A5</li>
+	 <li id="a">A6</li>
+	 <li>A7</li>
+	 <li>A8</li>
+	</ul>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 나를 기준으로 앞, 뒤 모든 형제 요소
+		$("p").siblings().css("color","red");
+		$("p").siblings(".my").css("font-size","40px");
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<div>A</div>
+	<p>A2</p>
+	<div>B</div>
+	<p class="my">B2</p>
+	<div>C</div>
+	<div class="my">C2</div>
+	<p>C3</p>
+	<div>D</div>
+	<div>E</div>
+	<div class="my">E3</div>
+	
+</body>
+</html>

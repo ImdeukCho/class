@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eq,gt,lt</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+	// 3번째 li선택 (idx 0부터시작)
+	/* var x = $("li:eq(2)");
+	console.log("li:eq(2)",x);
+	x.css("color","red"); */
+	
+	// gt(greater than) 모든 li선택 후 (idx 0부터시작)
+	/* var x = $("li:gt(2)");	// li 2번째보다 큰것들(3,4,5,6,7)
+	console.log("li:gt(2)",x);
+	x.css("color","red"); */
+	
+	// lt(less than) 모든 li선택 후 (idx 0부터시작)
+	var x = $("li:lt(5)");	// li 5번째보다 작은것들(0,1,2,3,4)
+	console.log("li:lt(5)",x);
+	x.css("color","red");
+});
+</script>
+</head>
+<body>
+	<div>
+		<h1>JQuery</h1>
+	</div>
+	<ul>
+		<li>A</li>
+		<li>A2</li>
+		<li>A3</li>
+		<li>A4</li>
+	</ul>
+	<ul>
+		<li>b</li>
+		<li>b2</li>
+		<li>b3</li>
+		<li>b4</li>
+	</ul>
+	<div>		
+		<p>Hello</p>
+	</div>
+	
+</body>
+</html>

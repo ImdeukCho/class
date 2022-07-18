@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	// class가 a와 a2마지막번째의 것 색갈을 red로 변경
+	$(".a").css("color","red");
+	$(".a2").last().css("color","red");
+	// $(".a2")[1].innerText ="aaaaa"; // javascript 방식
+	// $(".a2").last().html("aaaaaa"); // jquery객체로 변환 jquery함수 사용
+	var x = $(".a2");
+	$(x[1]).text("aaaaaa");
+});
+</script>
+</head>
+<body>
+	<p class="a">Hello</p>
+	<p class="a2">Hello2</p>
+	<div class="a2">World</div>
+</body>
+</html>

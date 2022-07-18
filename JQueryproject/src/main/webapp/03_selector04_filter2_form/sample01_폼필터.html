@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+/* 	// type="text"
+	var x = $("input:text"); // 2개
+	console.log("input:text",x);
+	
+	// type="checkbox"
+	var x = $("input:checkbox"); // 2개
+	console.log("input:checkbox >>>",x);
+	
+	// checked
+	var x = $("input:checked"); // 1개
+	console.log("input:checked >>>", x.val());
+	console.log("input:checked >>>", $("input[checked]").val()); */
+	
+	// :not() ==> 부정
+	var x = $("input:not(:checked)"); // 5개
+	console.log("input:not(:checked) >>>", x); 
+	
+/* 	//hidden
+	var x= $("input:hidden");
+	console.log("input:hidden", x);
+	console.log("input:hidden",  $("input[hidden]"));
+
+	
+	// enabled
+	var x = $("input:not(:enabled)"); // 1개
+	console.log("input:not(:enabled) >>>", x);
+	
+	// disabled
+	var x = $("input:not(:disabled)"); // 1개
+	console.log("input:not(:disabled) >>>", x); */
+	
+});
+</script>
+</head>
+<body>
+	<button>OK</button>
+	<form>
+		x:<input type="text" name="x" enabled=enabled><br>
+		xx:<input type="text" name="xx" disabled="disabled"><br>
+		x2:<input type="password" name="x2"><br>
+		x3:<input type="hidden" name="x3"><br>
+		x4:<input type="checkbox" name="x4" checked="checked" value="test"><br>
+		x5:<input type="checkbox" name="x5"><br>
+		<select>
+			 <option>10</option>
+			 <option selected="selected">20</option>
+			 <option>30</option>
+		</select>
+		
+	</form>
+</body>
+</html>

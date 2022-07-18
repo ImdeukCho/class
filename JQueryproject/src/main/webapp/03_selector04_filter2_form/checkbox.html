@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+	
+	// check의 부모인 span 스타일 지정
+	$(":checkbox").wrap("<span></sapn>").parent().css("border","3px dotted red");
+	
+	// 처음 시작화면에 checked된 것을 선택
+	$("input:text").val($("input:checked").val()); // text value값을 처음 선택된것으로 설정
+
+});
+</script>
+</head>
+<body>
+	사과<input type="checkbox" checked="checked" value="사과"><br>
+	배<input type="checkbox"  value="배"><br>
+	바나나<input type="checkbox"  value="바나나"><br>
+	<input type="radio" checked="checked" value="aaa">
+	<input type="text">
+
+</body>
+</html>

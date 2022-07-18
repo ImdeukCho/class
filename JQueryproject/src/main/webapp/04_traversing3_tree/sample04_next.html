@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 같은 레벨(형제)의 바로 뒤 요소, 한개
+		$("div").next().css("color","red");
+		$("div").next(".my").css("font-size","40px");
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<div>A</div>
+	<p>A2</p>
+	<div>B</div>
+	<p class="my">B2</p>
+	<div>C</div>
+	<div class="my">C2</div>
+	<p>C3</p>
+	
+</body>
+</html>

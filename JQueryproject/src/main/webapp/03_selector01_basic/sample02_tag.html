@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$("p").css("color","red");	// p태그만 스타일적용
+	
+	var data1 = document.getElementById("test");
+	console.log(data1); // <div id="test">world2</div>
+	console.log(data1.innerText); // world2
+	
+	var jdata1 = $("#test"); // css선택자 사용 #id 필수
+	console.log(jdata1); // S.fn.init [div#test]
+	console.log(jdata1.innerText); // undefined , fn경우 기존 js의 함수 사용이 안되고 jquery함수 사용
+	console.log(jdata1.text()); // world2
+	// fn인 경우 .value => val(), innerText => text(), innerHtml => html()
+	// getAttribute, setAttribute ==> 2개모두 attr()
+	
+	var jdata2 = $("#test2");
+	console.log(jdata2); // S.fn.init [input#test2]
+	console.log(jdata2.value); // undefined , fn경우 기존 js의 함수 사용이 안되고 jquery함수 사용
+	console.log(jdata2.val()); // test2 , type text value
+
+	
+	// jdata2.val("aaaaa"); //value값의 변경
+	console.log(jdata2.attr("value")); // .attr("속성이름") : 속성값을 꺼내온다
+	jdata2.attr("value","bbbbbb"); // .attr("변경할속성명", "변결할속성값") : 변경도 가능
+	console.log("-------------------------");
+	
+	// jquery 사용
+	var x = $("p"); 
+	console.log(x);	// S.fn.init(2) [p, p, prevObject: S.fn.init(1)] , 배열 안에 있는것이 객체가아니라 태그이므로 text가 아니라 innerText를 사용한다.
+	console.log(x[0]); // <p style="color: red;">Hello</p>
+	// console.log(x[0]).text; // 에러 , 배열요소의 접근시 기존 사용방식 그대로 사용
+	console.log(x[0].innerText,x[1].innerText); // Hello Hello2 , p태그 innerText사용
+	// 햇갈리면 이렇게
+	var x2 = $(x[0]); // jquery 객체로 변형
+	console.log(x2); // S.fn.init [p]
+	console.log(x2.text()); // Hello, jquery객체로 변형 후 함수 호출
+	
+	//div0, 1번의 txt값 콘솔에 출력
+	console.log("첫번째div값", $("div")[0].innerText); //주의
+	console.log("두번째div값", $("div")[1].innerText); //주의
+	
+	// x[1].css("color","blue"); // 오류
+	// $x[1].css("color","blue"); // html태그를 fn객체로 전환 후 함수사용
+	$(x[1]).css("color","blue"); // 정상출력
+	$("#test").text("adawdawda");
+	$("#test2").val("ccccccccc");
+
+});
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<p>Hello2</p>
+	<div>World</div>
+	<div id="test">world2</div>
+	<input type="text" id="test2" value="test2">	
+</body>
+</html>

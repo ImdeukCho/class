@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {	// div 이후 p만 선택이 아닌 addback을 통해 div와 p가 같이 포함 됨
+		
+		$("#x").find("p").addBack().css("color","red");	// .addBack() 대소문자 주의!!
+	
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<div id="x">
+		A
+		<p>B</p>
+	</div>
+	<div>C
+		<p>B</p>
+	</div>
+		
+</body>
+</html>

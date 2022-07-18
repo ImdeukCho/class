@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식/자손</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+	// p태그 바로 뒤 input 태그 반환
+	$("label+input").css("color","red").val("Laveled!!"); // 메소드체인 : 함수연속적으로 사용가능
+	console.log($("lavel+input"));
+	
+});
+</script>
+</head>
+<body>
+	<form>
+		<label>Name:</label>
+		<input name="name" id="name">
+		<input name="none">
+		<fieldset> <!-- 네모박스로 감싸줌 -->
+			<label>Name:</label>
+			<input name="name" id="name">
+			<input name="none">
+		</fieldset>
+	</form>
+</body>
+</html>

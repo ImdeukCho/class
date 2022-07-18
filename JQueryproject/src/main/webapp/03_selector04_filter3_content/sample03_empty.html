@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {	
+		// 자식이 없는 요소 반환
+		$("td:empty").css("background-color","blue");
+		// 자식이 있는 요소반환(:empty와 반대) : 자식을 가지고있는 td를 선택
+		$("td:parent").css("color","red");
+	});
+	
+</script>
+</head>
+<body>
+	<table border="1">
+	  <tr><td>TD #0</td><td></td></tr>
+	  <tr><td>TD #2</td><td></td></tr>
+	  <tr><td></td><td>TD#5</td></tr>
+	</table>
+
+	
+</body>
+</html>

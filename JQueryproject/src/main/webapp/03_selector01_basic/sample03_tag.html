@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	// 1. p태그 모두 선택 문자열 출력
+	var x = $("p");
+	console.log(x[0].innerText,x[1].innerText);
+	// 2. div 선택 첫번째 div의 글씨를 world => aaa로 변경
+	var divs = $("div");
+	// divs[0].innerText ="aaa"; // 이방법도 가능
+	$(divs[0]).text("bbb");
+	// 3. id=test2의 value값 출력, value값 변경
+	console.log($("#test2").val()); // 1개의 값이므로 var변수에 저장할필요가없다.
+	$("#test2").attr("value", "asdawd")
+
+});
+</script>
+</head>
+<body>
+	<p>Hello</p>
+	<p>Hello2</p>
+	<div>World</div>
+	<div id="test">world2</div>
+	<input type="text" id="test2" value="test2">	
+</body>
+</html>

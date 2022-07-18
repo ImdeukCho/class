@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필터선택자</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+	// 지정된 ul의 부모기준 자식들
+	var x = $("ul:first-child");
+	console.log("ul:first-child",x.text()); // 첫번째 li태그 4개 (A,A2,A3,A4)
+	$("ul:first-child").css("font-size","40px");
+	// ul의 자식들중 첫번째
+	var x1 = $("ul > :first-child");
+	console.log("ul> :first-child",x1.text());	// A, B
+	$("ul> :first-child").css("color","red");
+	// ul의 부모기준
+	var x2 = $("li:last-child");
+	console.log("li:last-child",x2.text());	// A4, B4
+	$("li:last-child").css("color","blue");
+	
+	// for문 이용 text 출력 (li의 모든 text출력)
+	var y = $("ul");
+	console.log("ul",y);
+	for (var i = 0; i < y.length; i++) {
+		console.log(y[i].innerText);
+	}
+	
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li>A</li>
+		<li>A2</li>
+		<li>A3</li>
+		<li>A4</li>
+	</ul>
+	<ul>
+		<li>b</li>
+		<li>b2</li>
+		<li>b3</li>
+		<li>b4</li>
+	</ul>
+	<div>
+		<p>Hello</p>
+	</div>
+
+</body>
+</html>

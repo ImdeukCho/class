@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(function() {
+	console.log("실행>>>>>>>>>>>>>>>>>>>");
+	$("#enable").click(function() {
+		console.log("enable>>>>>>>>>>>>>>>>>>>");
+		$("input[type='text']:disabled").removeAttr("disabled"); // disabled 속성삭제
+		$("input[type='text']").attr("enabled", "enabled"); // 전부 enabled로 속성변경
+	}); // end click
+	$("#disable").click(function() {
+		console.log("disabled>>>>>>>>>>>>>>>>>>>");
+		$("input[type='text']:enabled").removeAttr("enabled"); // enabled 속성삭제
+		$("input[type='text']").attr("disabled", "disabled"); //  전부 disabled로 속성변경
+	
+		$("#form").submit(function() {
+			event.preventDefault();
+		});
+	}); // end click
+	
+});
+</script>
+
+</head>
+<body>
+<form action="sample01.html">
+	<input type="text" id="first">
+	<input type="text" id="second" disabled="disabled">
+	<input type="button" value="enable" id="enable">
+	<button id="disable">disable</button>
+	<button id="test">test</button>
+</form>
+</body>
+</html>

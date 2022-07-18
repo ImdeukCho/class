@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 현재 요소의 부모부터 시작, 루트까지 모두 추가
+		$("p").parents().css("color","red");
+		$("p").parents("#my").css("font-size","40px");
+	
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<div>
+		A
+		<div>
+			B
+			<p>C</p>
+		</div>
+	</div>
+	<div id="my">
+		<p>D</p>
+	</div>
+
+		
+</body>
+</html>
