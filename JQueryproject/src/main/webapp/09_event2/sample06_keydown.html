@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#test").keydown(function () {
+		console.log("키 입력됨");
+		$("#result").text($(this).val());
+		$("#result2").text(event.keyCode);	// keyCode사용, 입력한 키의 아스키코드값 출력
+	});
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+
+	<p>keydown 실습 </p>
+	<input type="text" id="test">
+	<div id="result"></div>
+	<div id="result2"></div>
+
+</body>
+</html>

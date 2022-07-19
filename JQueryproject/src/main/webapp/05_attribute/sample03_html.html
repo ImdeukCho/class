@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// html태그를 사용 모두 가져옴
+		// html태그 사용 setter기록<h1>
+		$("button").click(function() {
+			var data = $("#text1").html();
+			console.log(data);
+			$("#result").html("<h1>"+data+"</h1>");
+		});
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<P id="text1"><span>홍길동</span></P>
+	<div id="result"></div>
+	<button>OK</button>
+		
+</body>
+</html>

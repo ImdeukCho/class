@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+
+	// $("#a").on("click",getData);
+	$("#a").click(getData);
+	
+});	// end ready	
+	
+	function getData() {
+		$.ajax({
+			type: "get",
+			url: "sample01_text_연습.jsp",
+			dataType:"text",
+			success: function (data, status, xhr) {
+				console.log("sucess : ", data);	// data만 필요함
+				$("#result").text(data);
+			},
+			error: function (xhr, data, e) {
+				console.log("error : ", e, status, xhr);
+				$("#result").text("데이터를 가져올 수 없습니다.");
+			}
+		})// end ajax
+	}// end fun
+
+</script>
+</head>
+<body>
+
+	<button id="a">ajax요청</button>
+	<div id="result"></div>
+
+
+</body>
+</html>

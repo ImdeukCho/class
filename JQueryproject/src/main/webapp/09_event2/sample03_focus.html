@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// focus 이벤트
+	$("#target").on("focus", function () {
+		console.log("target focus ======")
+		$(this).css("background","yellow");
+	});
+	
+	// blur 이벤트 : focus를 잃음
+	$("#target").on("blur", function () {
+		console.log("target blur ======")
+		$(this).css("background","");
+	});
+	
+	// blur버튼 클릭시 트리거
+	$("#other2").on("click", function () {
+		// $($("#target")).css("background","");
+		// $("#target").trigger("blur");
+		$("#target").blur();	// trigger
+	});
+	
+	// focus버튼 클릭시 트리거
+	$("#other").on("click", function () {
+		$("#target").trigger("focus");
+	});
+	
+	// off : 이벤트 제거
+	$("#other3").on("click", function () {
+		$("#target").off("blur focus");
+	});
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+
+	<form>
+		<input type="text" id="target">
+		<input type="text" >
+	</form>
+	<button id="other">focus</button>
+	<button id="other2">blur</button>
+	<button id="other3">clear</button>
+
+</body>
+</html>

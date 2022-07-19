@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+
+	$(document).ready(function() {	
+		// 자바스크립트 코드로 총합구하기
+		var arr = document.getElementsByTagName("li");
+		var total = 0;
+		for (var i = 0; i < arr.length; i++) {
+			console.log(arr[i].innerText);
+			total += parseInt(arr[i].innerText);
+		}
+		console.log(total);
+		document.getElementById("result").innerText = total;	// getElementById("#id값")틀림. ("id값")만 쓰자.
+		
+		// jquery로 총합구하기
+		$(function() {
+			console.log($("li").eq(0));				// fn
+			console.log($("li").eq(0).text());		// 100
+			console.log($("li").get(0));			// li태그
+			console.log($("li").get(0).innerText);	// 100
+			
+			var result = 0;
+			$.each($("li"), function(idx, value) {
+				console.log(this,value);	// 둘이 같은걸 알수있다.
+				// $(this) // jquery객체로 변환
+				// result = result + parseInt(value.innerText);
+				result = result + parseInt(this.innerText);	// this와 value값이 같다.
+			});
+			console.log(result);
+			$("#result").text(result);
+		});
+		
+		// $("li").eachd 이용 전체 데이터 총합을 #result에 출력
+		var result = 0;
+		$("li").each(function(idx, value) {
+			result += parseInt(value.innerText);
+		});
+		console.log(result);
+		$("#result").text(result);		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<ul>
+		<li>100</li>
+		<li>200</li>
+		<li>300</li>
+		<li>400</li>
+	</ul>
+	<span id="result"></span>
+</body>
+</html>

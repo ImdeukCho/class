@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#a").on("click mouseover", function() {
+		console.log("a버튼 ok");
+	});
+	
+	// trigger : 다른 이벤트를 강제 실행함
+	$("#b").on("click", function() {
+		console.log("trigger버튼 클릭");
+		$("#a").trigger("click");	// 다른 이벤트를 강제 실행함
+	});
+});	// end function
+</script>
+</head>
+
+	<button id="a">ok</button>
+	<button id="b">ok-trigger</button>
+
+
+</body>
+</html>

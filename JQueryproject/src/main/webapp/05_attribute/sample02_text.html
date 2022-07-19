@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+
+		$("button").on("click", function() {
+			var data = $("p").text();
+			$("#result").text(data);
+		});
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+
+	<p>홍길동</p>
+	<div id="result"></div>
+	<button id="btn">OK</button>
+		
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	// prepend : 앞에 html, 문자열 추가
+	$(function() {
+		
+		$("button").click(function() {
+			// $(".my").prepend("<h1>장군</h1>");			// 기존 내용의 앞에 추가, html 태그사용 가능
+			// $("<h1>장군</h1>").prependTo($(".my"));	// prependTo(순서 바꿔서) 위와 같은 효과
+			$(".my").prepend($("h1"));					// 기존태그의 이동
+		})
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<h1>영웅들</h1>
+	<div>
+		<div class="my">홍길동</div>
+		<div class="my">이순신</div>
+	</div>
+	<button>ok</button>
+	
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 속성명과 일치하는 모든 속성을 제거
+		$("#xxx").click(function() {
+			console.log("xxx 클릭됨");
+			$("#my").removeAttr("checked");	
+		});
+		// 속성추가 및 설정
+		$("#yyy").click(function() {
+			console.log("yyy 클릭됨");
+			$("#my").attr("checked","checked");
+		});
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	A<input id="my" type="checkbox" name="my" checked="checked"><br>
+	<button id="xxx">해제</button>
+	<button id="yyy">설정</button>
+		
+</body>
+</html>

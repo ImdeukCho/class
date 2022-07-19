@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+
+	$(document).ready(function() {
+		
+		// $.grep(arr, function(value, idx))
+		// grep 필터링 처리 후 다시 배열로 반환 (object, idx)순서로 순서가 다름
+		var s = ["A","B","C","D","E"];
+		var arr = $.grep(s, function(value, idx) {	// 주의 순서가 다름
+			return value == "B";	// B제외 리턴
+		}, true);	// :inverter false인 경우 검색결과가 true인것만 리턴 함, 
+		                      // true로 설정시 조건식이 true인것을 제외한 결과를 리턴함
+		console.log(arr);
+		console.log("======================");
+		
+		
+		
+		var arr2 = $.grep(s, function(value, idx) {
+			return value == "B";	// B만 리턴
+		}, false);
+		/* var arr2 = $(s).grep(function(value, idx) {	// $(s).grep(function) 사용안됨
+			return value ="B";	// B만 리턴
+		}, false); */
+		console.log(arr2);
+		console.log("======================");
+		
+		
+		var arr3 = $.grep(s, function(value, idx) {
+			return value == "B";	// B만 리턴
+		});
+		console.log(arr3);
+		console.log("======================");
+		
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	
+
+</body>
+</html>

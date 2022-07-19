@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// 두가지 이벤트를 설정함
+	$("#a").on("click mouseover",function() {
+		console.log("ok button");
+		console.log("ok button",event.screenX,event.screenY);
+		
+		$("#result").text(event.screenX);
+	});
+	
+	// 이벤트 제거
+	$("#b").on("click",function() {		// b버튼 클릭이벤트 발생시
+		$("#a").off("click mouseover");	// a버튼 두개이벤트 제거
+	});
+	
+});	// end function
+</script>
+</head>
+
+	<button id="a">ok</button>
+	<button id="b">cancel</button>
+	<div id="result"></div>
+
+
+</body>
+</html>

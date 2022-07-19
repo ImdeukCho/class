@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// one : 이벤트를 한번만 실행
+	$("#a").one("click", function() {	// 이벤트 실행 후 자동으로 off("click") 됨
+		console.log("ok");
+	})
+	
+	
+});	// end function
+</script>
+</head>
+
+	<button id="a">ok</button>
+
+</body>
+</html>

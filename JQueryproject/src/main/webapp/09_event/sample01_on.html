@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#a").click(function() {
+		console.log("ok");
+	});
+	$("#b").on("click",function() {
+		console.log("ok2");
+	});
+	
+});	// end function
+</script>
+</head>
+
+	<body><button id="a">ok</button>
+	<button id="b">ok2</button>
+
+</body>
+</html>

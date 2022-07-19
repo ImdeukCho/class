@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	// get함수는 fn객체가 아닌 javascript객체를 가져와 javascript 명령을 사용해야 함
+	// .css() 사용안됨
+	$(function () {
+		$("button").click(xxx);
+		aaa();
+	});	// end doc
+		
+	function aaa() {
+		console.log("aaa 호출됨");
+	}
+	function xxx () {
+		// console.log("click 동작")
+		var result =0;
+		// console.log("li의 맨마지막" + $("li").get(-1).text());	// 오류
+		console.log("li의 맨마지막" + $("li").get(-1).innerText);
+		$.each($("li"), function(idx, value) {
+			// console.log(this.innerText);
+			// result += parseInt(this.innerText);
+			result += parseInt($(this).text());
+		});
+		console.log(result);
+		$("#result").text(result);
+	};
+});	// end function
+</script>
+</head>
+<body>
+	<ul>
+		<li>100</li>
+		<li>200</li>
+		<li>300</li>
+		<li>400</li>
+	</ul>
+	<button>합계</button>
+	<span id="result"></span>
+</body>
+</html>

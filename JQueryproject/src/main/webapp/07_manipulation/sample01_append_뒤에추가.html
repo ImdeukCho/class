@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	// append(Content) 기존 text뒤에 새로운 내용 추가 html, 문자열, elements 가능
+	// 기존의 내용이 있을경우 이동됨
+	$(function() {
+		
+		$("button").click(function() {
+			// $(".my").append("aaaa");				// 기존 내용의 뒤에 추가
+			$(".my").append($("h1"));			// 기존태그의 이동
+			// $(".my").append("<h1>장군</h1>");		// 기존 내용의 뒤에 추가, html 태그사용 가능
+			// $("<h1>장군</h1>").appendTo($(".my"));	// appendTo(순서 바꿔서) 위와 같은 효과
+			
+		})
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<h1>영웅들</h1>
+	<div>
+		<div class="my">홍길동</div>
+		<div class="my">이순신</div>
+	</div>
+	<button>ok</button>
+	
+
+</body>
+</html>

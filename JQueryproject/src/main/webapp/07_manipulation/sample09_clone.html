@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+	// 복사. 모든 하위 요소 복사
+	$(function() {
+		
+		$("button").click(function() {	
+			$(this).clone().insertAfter($(this));	// true 이벤트핸들러 까지 복사, 기본 false, 이벤트로 생선된 버튼은 flase이므로 효과없음
+			$(this).clone(true).insertAfter($(this));	// true 이벤트핸들러 까지 복사, 기본 false , 이벤트로 생성된 버튼도 true이므로 이벤트 효과있음
+		
+		})
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	
+	<button>ok</button>
+
+</body>
+</html>

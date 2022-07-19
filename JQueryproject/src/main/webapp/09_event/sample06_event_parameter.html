@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// $(선택자).on(이벤트명, Json객체, 함수(event))
+	$("#a").on("click", {foo:"test",test:"abc"}, function(event){
+		console.log(event.data.foo);	// 이벤트를 통한 data객체로 전달됨
+		console.log(event.data.test);	// 이벤트를 통한 data객체로 전달됨
+	});
+	
+});	// end function
+</script>
+</head>
+
+	<button id="a">ok</button>
+ 	<div></div>
+
+	
+</body>
+</html>

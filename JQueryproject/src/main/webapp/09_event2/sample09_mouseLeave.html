@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// mouseleave : 진입후 빠져나올때 이벤트발생
+	// mouseover와는 다르게 자식요소에서는 발생되지 않음
+	/* $("#outer").mouseleave(function () {
+		$("#log").append("<div>mouseLeave발생</div>");
+	}); */
+	
+	// on으로 사용
+	$("#outer").on("mouseleave" , function () {
+		$("#log").append("<div>mouseLeave발생</div>");
+	});
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+
+	<div id="outer">outer
+		<div id="inner">inner</div>
+	</div>
+	<div id="log"> </div>
+
+</body>
+</html>

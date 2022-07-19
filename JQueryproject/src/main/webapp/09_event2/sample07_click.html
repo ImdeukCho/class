@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("div").click(function () {
+		// $("#result").html("<h1>"+$(this).text()+"</h1>");
+		// $("#result").append("<h1>"+$(this).text()+"</h1>");		// append사용(뒤) : html태그 사용가능, 글씨누적됨
+		$("#result").prepend("<h1>"+$(this).text()+"</h1>");		// prepend도 가능(앞)
+	});
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+
+	<div>홍길동</div>
+	<div>이순신</div>
+	<div>유관순</div>
+	<span id="result"></span>
+
+
+</body>
+</html>

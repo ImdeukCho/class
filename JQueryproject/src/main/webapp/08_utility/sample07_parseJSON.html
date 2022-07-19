@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var jsonString='{"name":"홍길동","age":20,"address":"서울"}';	// "",'' 바꿔쓰면 오류남
+	// var name = jsonString.name;	// 에러
+	
+	var jsonObj = $.parseJSON(jsonString);	// 문자열을 json객체로 변환
+	var name = jsonObj.name;
+	var age = jsonObj.age;
+	var address = jsonObj.address;
+	$("#result").append(name+"\t"+age+"\t"+address);
+	$("#result").append("<h1>"+name+"\t"+age+"\t"+address+"</h1>");
+	var jsonObj2 = JSON.parse(jsonString);	// 문자열을 json객체로 변환
+	console.log(jsonObj2.name);
+	console.log(jsonObj2);
+	var str = JSON.stringify(jsonObj2);		// json객체 => 문자열로 변환
+	console.log(str);
+	
+});	// end function
+</script>
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>

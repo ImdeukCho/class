@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	p {
+		margin: 8px;
+		font-size: 16px;
+	}
+	.selected{
+		color: red;
+	}
+	.highlight{
+		background: yellow;
+	}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// 태그에 class 속성추가, 기존 class속성이 있으면 덮어쓰기가 아닌 기존 속성뒤에 추가 됨
+		$("#b1").click(function() {
+			$("#a1").addClass("selected highlight");	// style 두개 추가
+		});
+		$("#b2").click(function() {
+			$("#a1").removeClass("selected highlight");	// style 두개 제거
+		});
+		$("#b3").click(function() {
+			$("#a2").toggleClass("selected highlight");	// style 두개 적용/제거
+		});
+	});	// end function
+	
+</script>
+</head>
+<body>
+	 <p id="a1">World1</p>
+	 <p id="a2">World2</p>
+	 <button id="b1">addClass</button>
+	 <button id="b2">removeClass</button>
+	 <button id="b3">toggleClass</button>
+
+
+</body>
+</html>

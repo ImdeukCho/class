@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	/* $("#test").change(function() {
+		console.log($(this).val());
+		$("#result").text($(this).val());
+	}); */
+	
+	// on 사용
+	$("#test").on("change", function() {
+		console.log($(this).val());
+		$("#result").text($(this).val());
+	});
+	
+});	// end function
+</script>
+</head>
+<body>
+	<select id="test">
+		<option>a</option>
+		<option>b</option>
+	</select>
+	<span id="result"></span>
+</body>
+</html>

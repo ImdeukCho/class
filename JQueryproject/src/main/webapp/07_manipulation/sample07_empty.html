@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+	// text를 포함한 자식(자손포함) 요소의 제거 (태그는 남아있음)
+	$(function() {
+		
+		$("button").click(function() {
+			$(".my1").empty();	// 자손제거
+		
+		})
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<h1>영웅들</h1>
+	<div>
+		<div class="my1">홍길동</div>
+		<div class="my2">이순신</div>
+		<div class="my3">유관순</div>
+		
+	</div>
+	<div>
+		<div class="inner first">테스트1</div>
+		<div class="inner second">테스트2</div>
+	</div>
+	<button>ok</button>
+
+
+
+	
+
+</body>
+</html>

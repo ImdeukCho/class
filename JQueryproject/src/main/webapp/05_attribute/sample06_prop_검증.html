@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+
+	$(function() {
+		
+		// prop 검증 true, false 리턴
+		$("button").click(function() {
+			console.log($("#my").attr("checked"));	// checked 출력
+			console.log($("#my").prop("checked"));	// true 출력
+			console.log($("#my2").prop("checked"));	// flase 출력
+		});
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	A<input id="my" type="checkbox" name="my" checked="checked"><br>
+	B<input id="my2" type="checkbox" name="my2"><br>
+	<button>OK</button>
+		
+</body>
+</html>

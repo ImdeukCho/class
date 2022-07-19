@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// $.each(idx, arr)
+	// 데이터를 얻어올 수 있으며 콜백함수내에서 반복을 빠지기 위해 false를 사용함
+	var s = ["A","B","C","D","E"];
+	
+	// 1. 일반 for문 전체 출력
+	for (var i = 0; i < s.length; i++) {
+		console.log(s[i]);
+	};
+	console.log("1.--------------------")
+	
+	// 2. for each 이용 전체 출력
+	for ( var data in s) {	// idx
+		console.log(s[data]);
+	};
+	for (let data of s) {	// value
+		console.log(data);
+	};
+	console.log("2.--------------------")
+	
+	// 3. $.each 전체출력
+	$.each(s, function(idx, value) {
+		console.log(idx, value);
+	});
+	$(s).each(function(idx, value) {
+		console.log(value);
+	});
+	console.log("3.--------------------")
+	
+	// Json
+	var s2 = {"one":100, "two":200, "three":300};
+	// $.each 이용 키값, value값 출력
+	$.each(s2, function(key, value) {
+		console.log(key, value);
+	});
+	console.log("4.--------------------")
+	
+	var s3 = ["A","B","C","D","E"];
+	$.each(s3, function(idx, value) {
+		console.log("s3 >>>",idx, value);
+		return value != "C";	// return false인 경우 break 기능 // c인경우 false리턴, c까지 출력
+	});
+});	// end function
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// hover : mouseEnter와 mouseLeave 이벤트 발생시 functionIn과 functionOut이 실행됨
+	// $(selector).mouseenter(fnIn),mouseleave(fnOut)을 닫음
+	$("li").hover(
+		function () {	// mouseEnter
+			$(this).append($("<span>***</span>"));
+		},
+		function () {	// mouseLeave
+			$(this).find("span").remove();
+		}
+	);
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+	<ul>
+		<li>홍길동</li>
+		<li>이순신</li>
+		<li class="fade">유관순</li>
+		<li class="fade">강감찬</li>
+	</ul>
+
+</body>
+</html>

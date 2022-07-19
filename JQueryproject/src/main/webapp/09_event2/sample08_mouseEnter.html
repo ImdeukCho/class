@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// mouseenter : 진입할때 이벤트 발생
+	// mouseover와는 다르게 자식요소에서는 발생되지 않음
+	$("#outer").mouseenter(function () {
+		$("#log").append("<div>mouseEnter발생</div>");
+	});
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+
+	<div id="outer">outer
+		<div id="inner">inner</div>
+	</div>
+	<div id="log"> </div>
+
+</body>
+</html>

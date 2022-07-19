@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+
+	$(document).ready(function() {
+		
+		// $.map(arr, function(value, idx))
+		// 배열을 가공해서 변환, 대소문자 변환, 값의 일부분을 반환
+		var s = ["January","February","33333333","4444444444","555555555","66666666666"];
+		var arr = $.map(s, function(value, idx) {	// value, idx 순서
+			console.log(value, idx);
+			return value.substring(0, 3);	// 각 배열방을 순회하며 문자열을 변경함.
+		},);	
+		
+		console.log(arr);
+		console.log("======================");
+		
+		
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	
+
+</body>
+</html>

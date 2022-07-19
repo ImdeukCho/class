@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+	
+	// 선택 요소를 에워쌈, 한 요소마다 하나씩 에어쌈. append, prepend처럼 이동되지 않고 복사됨 
+	// wrapAll은 대상요소를 모두 한번에 에워쌈
+	$(function() {
+		
+		$("button").click(function() {
+			$(".my").wrap("<div style='background:yellow' class='new'></div>");			
+			// $(".my").wrapAll("<div style='background:yellow' class='new'></div>");			
+			// 기존 ==> 복사
+			$(".my").wrap("h1");
+		})
+		
+		
+	});	// end function
+	
+</script>
+</head>
+<body>
+	<h1>영웅들</h1>
+	<div>
+		<div class="my">홍길동</div>
+		<div class="my">이순신</div>
+	</div>
+	<button>ok</button>
+
+	
+
+</body>
+</html>

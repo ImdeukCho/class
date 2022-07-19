@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	  $("#test").on("click", function() {
+		var data = $(".fruit");
+		var msg = "";
+		for (var i = 0; i < data.length; i++) {
+			if(data[i].checked){
+				msg += data[i].value;
+			}
+		}
+		console.log(msg); 
+		
+		var test = "";
+		$.each($(".fruit"), function(i, e) {
+			if(e.checked){
+				test += e.value;
+			}
+		});
+		console.log(test);
+		$("#result").text(test);
+	});
+	
+	
+	// 체크박스 전체선택,해제
+	$("#all").click(function () {	
+		console.log(this.checked);
+		var test = this.checked;
+		$.each($(".fruit"), function(i, e) {
+			e.checked = test;
+		})
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+});	// end ready
+
+</script>
+</head>
+<body>
+	<input type="checkbox" id="all"value="사과">전체 선택
+	<input type="checkbox" class="fruit" value="사과">사과
+	<input type="checkbox" class="fruit" value="배">배
+	<input type="checkbox" class="fruit" value="귤">귤
+	<button id="test">확인</button>
+	<div id="result"></div>
+
+
+</body>
+</html>
