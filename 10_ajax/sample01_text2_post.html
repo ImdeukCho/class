@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- cdn방법 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("button").on("click",function(){
+		$.ajax({
+			type: "post",	// 서버에 전달 및 응답
+			url:"sample01_text2.jsp",
+			// 한글이 깨질경우 한글처리
+			// contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			data: {			// 사용자가 서버에 전달할 데이터
+				id: $("#v1").val(),	// data전송 {v1:'홍길동',v2:'1234'}
+				pw: $("#v2").val()
+			},
+			dataType: "text",	// 응답타입
+			success: function(data, status, xhr) {	// 응답성공의 경우
+				console.log("success");
+				$("#result").text(data);
+			},
+			error: function(xhr, status, e) {	// 에러의 경우
+				console.log("error");
+				$("#result").append("데이터를 찾을수 없습니다");
+				$("#result").append(status);
+			}
+		});	// end ajax
+	});	// end button
+});	// end ready	 
+
+
+</script>
+</head>
+<body>
+
+	<button id="a">ajax요청</button><br>
+	v1:<input type="text" name="v1" id="v1"><br>
+	v2:<input type="text" name="v2" id="v2"><br>
+	<div id="result"></div>
+
+</body>
+</html>
