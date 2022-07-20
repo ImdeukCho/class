@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  
+	$(document).ready(function() {
+		var childWin;
+		$("#one").click(function() {
+			var popupX = (window.screen.width / 2) - (200 / 2);
+			var popupY= (window.screen.height / 2) - (300 / 2);
+			// 자식창 윈도우 가운데서 열리게하기
+			childWin = window.open("childWin_stu.html","",'status=no, height=300, width=200, left='+ popupX + ', top='+ popupY);
+			// window.open(url, name, specs, replace);
+	   		// window.open('팝업 주소', '팝업창 이름', '팝업창 설정');
+		});
+		
+		$("#two").click(function() {
+			childWin.close();
+		});	
+		$("#three").click(function() {
+			window.close();
+		});	
+	});
+	
+</script>
+</head>
+<body>
+ <button id="one">새창 열기</button>
+ <button id="two">새창 닫기</button>
+ <button id="three">현재창(부모장) 닫기</button>
+</body>
+</html>
