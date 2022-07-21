@@ -10,11 +10,27 @@
    
    var arr = [];  
     $(document).ready(function() {
-	 	/*
-	   코드 구현
-
-	 */
-  });
+    	$("#v1").keyup(function() {
+    		if(event.keyCode==13) {
+    			save();  	
+ 	    	}
+ 	    });
+    });
+    
+    function save() {
+		arr.push($("#v1").val());
+	    list();
+	}     
+    
+	function list() {
+		var mesg ="";
+	    $.each(arr , function(idx, data) {
+	    	mesg = mesg + arr[idx]+"<br>";	
+	    	// mesg = mesg + data+"<br>";
+	    });
+	    $("#result").html(mesg);
+	}     
+  
 </script>
 </head>
 <body>

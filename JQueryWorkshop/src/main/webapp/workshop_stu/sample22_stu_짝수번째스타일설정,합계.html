@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+ 	$("li:nth-child(2n)").css({"color":"red","font-size":"30px"});	// idx 1부터시작
+ 	var sum = 0;
+ 	$("#sum").click(function() {
+ 		$("li").each(function(idx, ele) {
+			if(idx%2 !=0){	// idx 0부터 시작
+				sum += parseInt($(this).text());
+			}
+	 	})
+	 		$("#result").text(sum);
+	});
+	
+});
+</script>
+</head>
+<body>
+	<ul>
+	 <li>5</li>
+	 <li>15</li>
+	 <li>25</li>
+	 <li>35</li>
+	 <li>45</li>
+	 <li>55</li>
+	 <li>65</li>
+	</ul>
+<button id="sum">li태그의 총합계</button><br>
+합계:<span id="result"></span>
+</body>
+</html>

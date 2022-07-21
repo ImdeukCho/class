@@ -7,10 +7,25 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-   var arr = [];  
-   $(document).ready(function() {
-	 	
-	   $("button").click(function() {
+	var arr = [];  
+	$(document).ready(function() {	
+		$("button").click(function() {
+		  	arr.push($("#v1").val());
+		  	list();
+		});
+	});	   
+	
+	function list() {
+		var result = $("#result");
+		var mesg ="";
+	    $.each(arr , function(idx, data) {
+	    	mesg = mesg + arr[idx]+"<br>";	
+	    	// mesg = mesg + data+"<br>";
+	    });
+	    result.html(mesg);
+	}     
+  
+	   /* $("button").click(function() {
 		    console.log($("#v1").val());
 		    if($("#v1").val() != null){
 		    	arr.push($("#v1").val());
@@ -25,10 +40,8 @@
 		    	str = data+"<br>";	    	
 		    });
 		    $("#result").append(str);
-		    // $("#result").append($(this).val()+"<br>");
-	   });
-	  
-   });
+	   }); */
+
    
 </script>
 </head>
