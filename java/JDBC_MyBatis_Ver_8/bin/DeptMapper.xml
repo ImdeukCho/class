@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dept.DeptMapper"> <!-- 매퍼마다 다른이름 부여, 다중매퍼 사용시 namespace.id 로 구분 -->
+
+ <select id="selectAll" resultType="Dept"> 
+ 	select deptno, dname, loc from dept
+ </select>
+ 
+ <insert id="deptInsert" parameterType="Dept">
+	insert into dept (deptno, dname, loc) values (#{deptno}, #{dname}, #{loc})
+ </insert>
+ 
+ <update id="deptUpdate" parameterType="Dept">
+ 	update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
+ </update>
+ 
+ <delete id="deptDelete" parameterType="int">    <!-- int타입이다. -->
+ 	delete from dept where deptno=#{deptno}
+ </delete>
+ 
+ <!-- deptno parameterType(int형)으로 넘어와서 sql문에서 검색 , 검색한 결과를 resultType으로 dept에 담는다-->
+ <select id="selectByDeptno" parameterType="int" resultType="com.dto.Dept">  
+ 	select deptno, dname, loc from dept where deptno=#{deptno}
+ </select>
+ 
+ 
+</mapper>
+
