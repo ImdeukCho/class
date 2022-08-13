@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dept.DeptMapper4">  <!-- 매퍼마다 다른이름 부여, 다중매퍼 사용시 namespace.id 로 구분 -->
+
+ <select id="multiSelect" parameterType="list" resultType="Dept">
+ 	select deptno, dname, loc from dept where deptno in
+ 	<!-- 주의 -->
+ 	<foreach item="item" collection="list" open="(" separator="," close=")">
+ 		#{item}   <!-- (12, 13, 50) -->
+ 	</foreach>
+ </select>
+
+ <update id="multiUpdate" parameterType="list">
+ 	update dept set loc='aa' where deptno in
+ 	<foreach item="item" collection="list" open="(" separator="," close=")">
+ 		#{item}   <!-- (12, 13, 50) -->
+ 	</foreach>
+ </update>
+</mapper>
+
