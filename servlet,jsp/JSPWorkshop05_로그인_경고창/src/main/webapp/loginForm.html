@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인폼</title>
+<script type="text/javascript">
+
+	function check() {
+		// var id = document.getElementsByName("userid").value;		// name으로 찾으면 오류가된다 , name,class는 여러개의 같은이름도 저장가능하므로 조심히 사용
+		// var id = document.getElementById("userid").value;		// id로는 정상작동, 하나의 이름만 가능
+		var id= document.querySelector("#userid").value;			// querySelector, querySelectorAll 주로 사용하자.
+		var pw= document.querySelector("#passwd").value;
+		console.log(id,"  ", pw);
+		if(id.length==0 || pw.length==0){
+			alert("아이디 및 비밀번호를 확인하세요");
+			event.preventDefault();
+		}
+	}
+
+
+</script>
+</head>
+<body>
+ <form action="myLogin" method="post" onsubmit="check()">
+  아이디<input type="text" name="userid" id="userid"><br>
+  비밀번호<input type="text" name="passwd" id="passwd"><br>
+  <input type="submit" value="로그인">
+ </form>
+</body>
+</html>
