@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+   <properties resource="com/config/jdbc.properties" />				<!-- 주의) 파일경로 / 로 구분  -->
+   
+   <typeAliases>
+    <typeAlias type="com.dto.EmpDTO" alias="EmpDTO"/>				<!-- 파일경로 . 로 구분   EmpDTO 변경   -->
+   </typeAliases>
+   
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />		<!--  4가지정보 value jdbc.properties랑 맞춰주기 -->
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${xxx}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/config/EmpMapper.xml" />				<!--  주의) 파일경로 / 로 구분  -->
+	</mappers>
+</configuration>
+
+
+
