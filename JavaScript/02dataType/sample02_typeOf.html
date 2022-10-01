@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dataType</title>
+<script type="text/javascript">
+
+	// 1. 데이터 타입 확인 ( typeof 변수명 )
+	var name = "홍길동";
+	var age = 20;
+	var array = [1,2,3,4] // 배열
+	var obj = {"username":"이순신","age":44};	// 객체의 JSON
+	var result = true;	// boolean
+	var xxx;	// undefined
+	var kkk = null;	// null;
+	var zzz = function(){};	// 함수 객체 변수에 함수를 저장 가능
+	var xyz = parseInt("123");	// numver 123
+	
+	console.log( typeof name );		// string
+	console.log( typeof age );		// number
+	console.log( typeof array );	// object
+	
+	console.log( typeof obj );		// object
+	console.log( typeof result );	// boolean
+	console.log( typeof xxx );		// undefined
+	console.log( typeof kkk );		// object ( null )
+	console.log( typeof zzz );		// function , 함수지만 참조형변수이므로 object타입이 아니다.
+	console.log( typeof xyz );		// number
+	
+
+	// 2. 문자열 비교
+	// java : .equals
+	// javascript : == 비교
+	console.log( typeof name == 'string');
+	console.log( typeof age == 'number');
+	console.log( typeof array == 'object');
+	
+	console.log( typeof obj == 'object');
+	console.log( typeof result == 'boolean');
+	console.log( typeof xxx == 'undefined');
+	console.log( typeof kkk == 'object');
+	console.log( typeof zzz == 'function');
+	console.log( typeof xyz == 'number');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
