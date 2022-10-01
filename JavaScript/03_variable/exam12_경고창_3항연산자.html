@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 3항 연산자
+	console.log('========================');
+	alert('경고창');	// alert() : 실행시 스크립트 진행 중지
+	var k = (4>5)? 100:200;
+	console.log(k);	// false이므로 200
+	
+	var k2 = (4>5)? alert(1):alert(2);
+	console.log(k2);	// 경고창(2)뜬 후 undefined
+	
+	var k3 = (4>5)? (alert(1),100):(alert(2),200);
+	console.log(k3);	// 경고창(2)뜬 후 200 출력
+	
+	var k4 = ("22")? 100:200; // 문자열은 true로 자동형변환
+	console.log(k4);	// true이므로 100
+	
+	console.log(k+"\t"+k2+"\t"+k3+"\t"+k4);	// 200	undefined	200	100
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

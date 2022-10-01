@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function outputNumbers(count) {
+		for (var i = 0; i < count; i++) {
+			console.log(i);
+		}
+		console.log(">>"+i);	// 5
+	}
+	outputNumbers(5);
+	
+	/* 익명 함수를 통해 블록, 스코프를 흉내내서 이 문제를 해결할 수 있습니다.
+	   이를 '즉시 호출 함수'라고 부르기도 합니다.
+	   이 테크닉은 전역 스코프에 추가되는 변수나 함수의 수를 제한하는 용도로 자주 사용합니다 */
+	function outputNumbers2(count) {
+		(function () {
+			for (var i = 0; i < count; i++) {
+			console.log(i);
+			}
+		})();
+		console.log(">>"+i);	// 에러 , 즉시호출함수의 지역변수는 명시한 함수안에서만 사용가능
+	}
+	outputNumbers2(3);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

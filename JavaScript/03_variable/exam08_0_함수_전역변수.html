@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 함수 : function 이름(){}  - 리턴타입 기재 필요 없음
+	// 1. 함수 작성 후 호출
+	/* function test() {
+		console.log("test() 호출됨");
+	} // end function
+	test()	// 함수 호출
+	
+	// 2. 변수값 넘김
+	function test2(n) {
+		console.log("test2 호출됨", n);
+	}
+	test2(100)
+	
+	// 3. 리턴값 받음
+	function test3(n) {
+		console.log("test3 호출됨", n);
+		return n+100;
+	}
+	var result = test3(100);
+	console.log(result); */
+	
+	
+	
+	////////////////////////////////////////////////
+	// 전역변수
+	var x = '홍길동';	// 함수바깥 , 전연벽수가 됨 , 어떤 변수 영역 내에서도 접근할 수 있는 변수
+	
+	
+	function test() {
+		console.log("test 호출됨",x);	// 전역변수(x) 사용
+	}
+	test()
+	
+	function test2(n1,n2) {
+		console.log("test2 호출됨",n1,n2,x);
+	}
+	test2(100,200)
+	
+	function test3(n1,n2) {
+		console.log(num);	// 호이스팅 , undefined
+		console.log("test3 호출됨",n1,n2);
+		{
+		var num = n1+n2	// 지역(로컬변수) , 함수 단위    /// 자바는 블럭단위
+		}
+		return num;
+	}
+	var result = test3(100,200)
+	console.log(result);
+	// console.log(num);	// 오류발생 : num은 로컬변수이므로 밖에서 사용못함.
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

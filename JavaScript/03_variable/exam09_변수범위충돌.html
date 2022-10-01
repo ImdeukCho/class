@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var scope = "hello";	
+	// 자바스크립트만의 특징 , 작성시 주의점
+	// 1. 전역변수와 지역변수가 동일할 경우
+	function f() {
+		document.write(scope+"<br>");	// 전역과 지역이 동일할 경우 지역변수를 사용 , 브라우저에 출력 , undefined 출력
+		var scope = "test";	// 지역변수
+		scope = 'aaaa';		// 지역변수로 사용
+		document.write('지역변수 >>', scope+"<br>");	// aaaa - 지역변수 사용
+	}
+	f();
+	console.log(scope);	// hello - 전역변수
+	
+	// 2. 지역변수 없는경우 모두 전역변수로 사용됨
+	var scope2 = "hello";	// 전역
+	function f() {
+		document.write(scope2+"<br>");	// 지역이 없으므로 전역변수를 사용, hello 출력
+		// var scope = "test";	// 지역변수 없는경우
+		scope2 = 'aaaa';		// 전역변수 , 지역변수가 없으므로 전역변수로 사용
+		document.write('전역변수 >>', scope2+"<br>");	// aaaa - 전역변수 사용
+	}
+	f();
+	console.log(scope2);	// aaaa - 전역변수
+</script>
+</head>
+<body>
+
+</body>
+</html>

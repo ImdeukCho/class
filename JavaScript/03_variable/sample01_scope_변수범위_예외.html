@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 주의) if, for문에서는 지역변수가 설정안된다.
+	var a = 10;
+	if(true){
+		var n = 10;
+	}
+	console.log("a="+a);	// 10 출력 , 전역변수이므로
+	console.log("n="+n);	// 10 출력 , if문에서는 지역변수 설정 안된다. 
+	
+	///////////////////////////////////////////////////
+	function xxx() {	// function 리턴타입없음 함수이름(매개변수이름) : 호출해야만 실행됨
+		var x = 10;		// xxx() 함수에서만 사용가능
+		console.log("x="+x);
+	}
+	xxx();
+	// console.log("x="+x);	// 오류발생
+	console.log("a="+a);
+	console.log("n="+n);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
