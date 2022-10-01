@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	 // 1. 산술연산
+		 var a = 10;
+		 var b = 3;
+		 console.log(a+b);
+		 console.log(a-b);
+		 console.log(a*b);
+		 console.log(a/b);
+		 console.log(a%b);		// 나머지 1
+		 
+		 var aa = "10";
+		 console.log(aa+20);	// 1020
+		 console.log(aa-5);
+		 console.log(aa*5);
+		 console.log(aa/5); 
+	 
+	 // 2. 증감연산
+		 var y = 3;
+		 var y2 = 3;
+		 
+		 ++y;						// 4
+		 y2++;						// 4
+		 console.log(y+" "+y2);		// 4 4
+		 
+		 // y=4, y2=4
+		 var y3 = ++y;				// y3=5, y=5
+		 console.log(y+" "+y3);		// 5 5
+		 var y4 = y2++;				//	y4=4, y2=5
+		 console.log(y2+" "+y4);	// 5 4  
+	 
+	 // 3. 대입연산자
+		 var a = 10;
+	 	 var b = 5;
+	 	 console.log( a += b );	// a+b=15 , a값 계속 갱신됨
+	 	 console.log( a -= b );	// a-b=10
+	 	 console.log( a *= b );	// a*b=50
+	 	 console.log( a /= b );	// a/b=10
+	 	 console.log( a %= b );	// a%b=0 
+	 	
+	  // 4. 비교 연산자
+		 var v1 = 10;
+		 var v2 = 9;
+		 console.log( v1 == v2 );	// equal비교 , false
+		 console.log( v1 > v2 );
+		 console.log( v1 >= v2 );
+		 console.log( v1 < v2 );
+		 console.log( v1 <= v2 );
+		 console.log( v1 != v2 );	// true 
+		 
+	 // 주의할점
+		 var w1 = 10;
+		 var w2 = "10";
+		 console.log("w1 == w2" , w1 == w2 );	// 필요하면 타입 변환하고 비교한다. (equal)
+		 console.log("w1 === w2" , w1 === w2 );	// 타입 변환하지 않고 비교한다. (identical) 
+		 
+		 
+	// 5. 논리 연산자
+	// or 연산자 
+	//  좌 객체 참 => 검사 필요없음 => 좌 객체 리턴
+	//	좌 객체 거짓 => 우 객체 검사필요 => 우 객체 리턴
+		  console.log("'123' || 10" , "123" || 10);	// 123 -> 참 , 좌 리턴 , "123" 출력
+		  console.log("0 || 10" , 0 || 10);			// 0 -> 거짓 , 우 리턴 , 10 출력
+		  
+	// and 연산자
+	//	좌 객체 참 => 우 객체 검사필요  => 우 객체 리턴
+	//	좌 객체 거짓 => 검사 필요없음 => 좌 객체 리턴
+		  console.log("'123' && 10" , "123" && 10);	// 10
+		  console.log("0 && 10" , 0 && 10);			// 0 
+		  
+	// 6. 3항 연산자
+		  var aaa = (4>3)? 100:200;
+		  console.log(aaa);							// 100
+		  var aaa2 = (4>3)? alert(100):alert(200);
+		  console.log(aaa2);						// alert(100) 경고창 후 undefined 출력 , 콘솔에서는 정의가 안되었으므로 
+		  var aaa3 = (4>3)? "AA":"BB";
+		  console.log(aaa3);						// AA 
+		  
+		function x(a) {
+			var arr = a || [];	// 배열 저장
+			console.log(arr);
+		}
+		  
+		x();		// or연산자 이므로 변수가 false 시 우 객체 리턴 , 배열 0개 저장 
+		x([1,2]);	// or연산자 이므로 변수가 True  시 좌 객체 리턴 , 배열 2개 저장
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>
