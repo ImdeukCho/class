@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 이름있는함수 - 매개변수없음, 리턴값 있음
+	console.log("1");
+	
+	function aaa() {			
+		console.log("2");
+		return 100;				// 리턴값의 사용
+	}
+	console.log("3");
+	var x = aaa();				// 호출, 리턴값 받기
+	console.log("4",x);			// 4 100 출력
+	
+	/////////////////////////////////////////
+	// 함수는 일급객체(변수에 저장가능, 매개변수로 사용가능, 리턴값으로 사용가능)
+	console.log(aaa);			// 함수 객체 출력 - 함수 자체(일급 객체)
+	console.log(aaa());			// 함수 호출, 리턴값 출력
+	
+	var y = aaa;				// 호출이 아닌 함수를 변수에 저장 , 함수 이름만! 사용하여 함수객체 저장
+	console.log("y======"+y);	// 함수 객체 출력
+	y();	// 함수 호출 , 2 출력
+	aaa();	// 함수 호출 , 2 출력
+	
+	// 이번트 처리 click(1. 처리 함수 직접구현)
+	/* 2. function a(){}   
+	       click(a)        */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

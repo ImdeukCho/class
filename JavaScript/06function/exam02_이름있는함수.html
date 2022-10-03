@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//이름있는 함수 - 매개변수 없음, 리턴값 없음
+	console.log("1");
+	
+	function aaa() {
+		console.log("5");
+		return;	// 리턴값 없음
+		console.log("=================");	// 리턴값 뒤에 작성시 에러는 안나지만 실행문 실행이 안됨.
+	}
+	console.log("3");
+	aaa();	// 호출
+	aaa();
+	console.log("4");
+	aaa();
+	// 1 3 5 5 4 5 출력
+</script>
+</head>
+<body>
+
+</body>
+</html>

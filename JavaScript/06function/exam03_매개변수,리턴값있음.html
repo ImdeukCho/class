@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//이름있는 함수 - 매개변수 있음, 리턴값 있음
+	console.log("1");
+	
+	function aaa(n) {	// 매개변수
+		console.log("전달받은 값:"+n);
+		return n+100;	// 리턴값 있음
+		console.log("=================");	// 자바스크립트만의 특징 : 리턴값 뒤에 작성시 정상작동은 하지만 뒤의 실행문은 실행안됨.
+	}
+	
+	// aaa함수 호출 100 전달, 결과 받아서 출력
+	var result = aaa(100);
+	console.log("return 받은 값:"+result);
+</script>
+</head>
+<body>
+
+</body>
+</html>

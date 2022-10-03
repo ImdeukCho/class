@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 일급 객체
+	function myMax(n,n2) {
+		return (n>n2)? n:n2;	// 3항 연산자
+	}
+	
+	function myMax2(n,n2) {
+		var result2 = n;		
+		if (n<n2) {				// if 문 사용
+			return result2 = n2;
+		}
+	}
+	
+	// 두개 중 최대값을 리턴시키는 함수 구현
+	var result = myMax(10,20);	// 3항 연산자 리턴값 저장
+	console.log(result);		// 20
+	
+	console.log(myMax2(10,20));	// if문 리턴값 20 출력
+	
+	var x = myMax;
+	var result3 = x(3,4);
+	console.log(result3);	// 4 출력
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

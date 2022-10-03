@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function call(info) {
+		info();	// 함수호출
+	}
+	
+	
+	// callback();	// 에러발생, 익명함수는 선언전에 호출이 안됨.
+	var callback = function() {
+		console.log("callback");
+	}
+	callback();
+	call(callback);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

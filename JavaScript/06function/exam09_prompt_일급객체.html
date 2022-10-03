@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 프롬포트에서 정수값을 입력 ex)10
+	// printData함수 구현 : 매개변수로 count를 받아 for문으로 count까지 숫자 출력 1~10
+	
+	var input = prompt("정수값 입력");
+	var num = parseInt(input);
+	
+	function printData(n) {
+		for (var i = 1; i <= n; i++) {
+			console.log(i);
+		}
+	}
+	printData(num);			// 이름있는 함수는 함수호출 사용 잊지말자!!!!
+	
+	//////////////////////////////////////////
+	// x변수에 함수 저장, x함수에 input값 전송 for 출력
+	var x = printData;
+	x(input);				// 숫자형변환 안해도 작동은 한다.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

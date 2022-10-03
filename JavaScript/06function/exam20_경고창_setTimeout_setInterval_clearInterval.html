@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	// 1. 경고창
+ 	alert("경고문......");	// 프로그램 일시 정지
+	console.log("---------------------------");
+	 
+	function aaa() {
+		alert("aaa");
+		console.log("---------------------------");
+	} 
+	aaa();
+	
+	// 2. setTimeout() : 1초가 1000 , 3초뒤의 앞에 넣어둔 aaa함수를 자동으로 실행
+	var test = aaa;
+	setTimeout(test,3000);	
+	setTimeout(function() {		// 함수 직접구현 넘기기
+					alert("~~~~~~");
+				},3000);					// setTimeout함수로 인해 자동실행되므로 익명함수호출할 필요가 없다. function(){};
+	 
+	
+	// 3. setInterval 함수, 시간을 설정해서 지정된 시간이 흐른뒤에 반복적으로 함수호출
+ 	setInterval(function() {
+					console.log("setInterval");
+				},2000);
+	
+	var test = function() {
+				console.log("setInterval");
+			}
+	setInterval(test,2000);
+	
+	var kkk = setInterval(
+					function() {
+						console.log("setInterval");
+					}
+		,3000);
+	
+	// 일정시간 후 interval 삭제 설정
+	setTimeout(
+		function name() {		// 10초뒤에 interval 삭제
+			clearInterval(kkk);	// clearInterval()
+		}		
+	,10000);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
