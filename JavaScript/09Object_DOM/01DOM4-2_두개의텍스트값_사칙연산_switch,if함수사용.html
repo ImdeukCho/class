@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	값1<input type="text" name="val1" id="v1"><br>
+	값2<input type="text" name="val2" id="v2"><br>	
+	<button onclick="calc('+')">+</button>
+	<button onclick="calc('-')">-</button>
+	<button onclick="calc('*')">*</button>
+	<button onclick="calc('/')">/</button>
+	<br>
+	결과값<input type="text" name="result" id="result">
+	<script type="text/javascript">
+		function calc(n) {
+			var v1 = document.getElementById("v1").value;
+			var v2 = document.getElementById("v2").value;
+			var result = document.getElementById("result");
+			
+			// switch 사용
+			switch (n) {									
+			case '+':
+				result.value = parseInt(v1) + parseInt(v2);
+				break;
+			case '-':
+				result.value = parseInt(v1) - parseInt(v2);
+				break;
+			case '*':
+				result.value = parseInt(v1) * parseInt(v2);
+				break;
+			case '/':
+				result.value = parseInt(v1) / parseInt(v2);
+				break;
+			} 
+			/* 
+			// if 사용
+			if (n == '+') {								
+				result.value = parseInt(v1) + parseInt(v2);
+			}else if(n == '-') {
+				result.value = parseInt(v1) - parseInt(v2);
+			}else if(n == '*') {
+				result.value = parseInt(v1) * parseInt(v2);
+			}else if(n == '/') {
+				result.value = parseInt(v1) / parseInt(v2);
+			} 	 */ 
+		}
+	</script>
+</body>
+</html>

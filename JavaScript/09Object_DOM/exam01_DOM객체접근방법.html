@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>hello</p>
+	<p>hello2</p>
+	<div>
+		<div id="x"><h1>홍길동</h1></div>
+	</div>
+	<a href="daum.net" class="test"><h2>다음1</h2></a><br>
+	<a href="daum.net" class="test"><h3>다음2</h3></a><br>
+	<div id="y"><h1>이순신</h1></div>
+	<input type="text" id="xx" value="xxxxxxxxxxxxxxxxxxx">
+	<script type="text/javascript">
+	
+	
+	// 1. ID
+		var input = document.getElementById("y");
+		console.log(input.gete);
+		
+	// 2. 여러개 태그 선택 : class, 태그이름, name 이용
+		var ps = document.getElementsByTagName("p");
+		console.log(ps);				// 여러 태그가 배열로 저장됨
+		console.log(ps[0].innerText);	// innerText : 태그와 태그사이의 문자열 접근
+		console.log(ps[1].innerText);
+		for (let p of ps) {
+			console.log(p.innerText);
+		}
+		ps[1].innerText='aaaaaaaaaaaaaaaaaaa';	// 배열에서 문자열 꺼내서 수정함
+	// 2. 여러개 꺼내오기 : class 이름 이용
+		var hrefs = document.getElementsByClassName("test");
+		console.log(hrefs);		// 배열로 저장됨
+		console.log(hrefs[0].innerText);		// innerText : 문자열만 꺼내옴
+		console.log(hrefs[0].innerHTML);		// innerHTML : 문자열 + 태그 꺼내옴
+		for (let a of hrefs) {
+			a.innerHTML="<h1>다음</h1>";			// 모든 a태그가 변경값으로 수정됨.
+		}
+	// 3. css 선택자의 사용 ( 호출형식 그대로 사용 )
+		console.log(document.querySelector("#xx"));			// querySelector : #id로 사용
+		console.log(document.querySelectorAll(".test"));	// querySelectorAll : .class이름 사용
+		console.log(document.querySelectorAll(".test")[0].href); // 배열의 값 꺼내오기
+	</script>
+</body>
+</html>

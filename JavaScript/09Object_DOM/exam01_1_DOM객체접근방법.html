@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>hello</p>
+	<p>hello2</p>
+	<div>
+		<div id="x"><h1>홍길동</h1></div>
+	</div>
+	<a href="daum.net" class="test"><h2>다음1</h2></a><br>
+	<a href="daum.net" class="test"><h3>다음2</h3></a><br>
+	<div id="y"><h1>이순신</h1></div>
+	<input type="text" id="xx" value="xxxxxxxxxxxxxxxxxxx">
+	
+	<script type="text/javascript">
+	// 1. id y 의 html 태그 출력
+	console.log(document.getElementById("y").innerHTML);
+	// 2. id xx의 value를 홍길동으로 변경
+	document.getElementById("xx").value = "홍길동";
+	// 3. class 이름이 test인 요소의 href 속성값 출력
+	for (let tag of document.getElementsByClassName("test")) {
+		console.log(tag.href);
+	}
+	// 4. p태그의 글씨를 모두 hello -> world로 변경
+	for (let tag of document.getElementsByTagName("p")) {
+		tag.innerText = "world";
+	}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function xxx() {			// select tab 선택
+		var f = document.getElementById("fruits");		
+		console.log(f.value);	// 이벤트 발생 dom
+	}
+	function xxx2(s) {		
+		console.log(s);		// s = document.getElementById("fruits")
+		console.log(s.value);	
+	}
+	function xxx3(s) {		
+		console.log(s);		// s = document.getElementById("fruits").value
+	}
+</script>
+</head>
+<body>
+	<select id="fruits" onchange="xxx()">		<!-- slecet change 이벤트 발생 -->
+		<option>사과</option>
+		<option>바나나</option>		<!-- value 삭제 후 테스트 : value속성값말고 DOM텍스트값으로도 사용가능 -->
+		<option>수박</option>							
+		<option>포도</option>
+	</select>
+	
+	<select id="fruits2" onchange="xxx2(this)">			<!-- this 매개변수 -->	
+		<option value="사과">사과</option>
+		<option value="바나나">바나나</option>			
+		<option value="수박">수박</option>
+		<option value="포도">포도</option>
+	</select>
+	
+	<select id="fruits3" onchange="xxx3(this.value)">	<!-- this.value 매개변수-->	
+		<option value="사과">사과</option>
+		<option value="바나나">바나나</option>			
+		<option value="수박">수박</option>
+		<option value="포도">포도</option>
+	</select>
+</body>
+</html>
