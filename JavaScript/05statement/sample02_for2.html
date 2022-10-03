@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	// 이중 for 문
+	OUTER:
+		for (var i = 0; i < 10; i++) {
+			for (var k = 0; k < 5; k++) {
+				console.log(i+" "+k);
+				if(k==2) break OUTER;	// k==2일때 break 바깥으로 나가서 함수 끝남. 
+			}
+		}
+	
+	// OUTER 없을 경우
+	/* OUTER: */
+		for (var i = 0; i < 10; i++) {
+			for (var k = 0; k < 5; k++) {
+				console.log(i+" "+k);
+				if(k==2) break ;		// 안쪽 for문만 끝나고 밖의 for문 작동
+			}
+		}
+</script>
+</head>
+<body>
+
+</body>
+</html>

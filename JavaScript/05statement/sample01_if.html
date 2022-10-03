@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 1. 단일 if 문
+	if(3>2){
+		console.log("3>2");
+	}		
+	// 주의할 점
+	if(3>2){
+		var local = 10;	// 변수는 함수단위 스코프로 동작.
+	}
+	console.log(local);	// 밖에서 사용 가능.
+	
+	
+	// 2. if ~ else
+	var gender = "여";
+	
+	if(gender == "남"){
+		console.log("남자");
+	}else{
+		console.log("여자");
+	}
+	
+	
+	// 3. 다중 if
+	var grade = 80;
+	
+	if(grade >= 90){
+		console.log("A 학점");
+	}else if(grade >= 80){
+		console.log("B 학점");
+	}else if(grade >= 70){
+		console.log("C 학점");
+	}else{
+		console.log("D 학점");
+	} 
+	
+	
+	
+	// 4. switch 문
+	var floor = 3;
+	var info;
+	switch (floor) {
+		case 1: info = "1층은 잡화"; break
+		case 2: info = "2층은 여성"; break
+		case 3: info = "3층은 남성"; break
+		default: info = "4층은 옥상"
+	}
+	console.log(info);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
