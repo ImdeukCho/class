@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function a(n) {	// 배열
+		n[0] = 100;
+	}
+	function b(n) {	// 배열
+		n = 100;
+	}
+	var k = [10,20,30,40,50];
+	console.log(k);
+	a(k);	// 배열 넘김
+	console.log(k);		// k[0] call by ref , 객체 주소 넘어가서 수정값 반영
+	var t = 10;
+	b(t);
+	console.log(t);		// 10 출력, call by value , 객체값 넘어가서 수정값 반영 안됨
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
