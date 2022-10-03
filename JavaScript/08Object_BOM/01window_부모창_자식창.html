@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var child;	// 자식창 참조 - 전역변수
+	function yyy() {
+	// child = window.open("01child_자식창.html","","width=200, height=300");	// 가운데"" : 창이름
+	// 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기		
+	 	 var width=200;
+		 var height=300;
+		 var left = Math.ceil(( window.screen.width - width )/2);
+		 var top = Math.ceil(( window.screen.height - height )/2);  
+		child= window.open("01child_자식창.html", "childName", "width="+width+", height="+height+", left="+left+",top="+top);
+	 	child= window.open("01child_자식창.html", "childName", "width=100, height=200");
+
+	}
+	function yyy2() {
+		child.close("yyy2 호출됨")
+	}
+	function yyy3() {
+		console.log("yyy3 호출됨")
+		window.close();			// 내창 닫기
+	}
+	
+</script>
+</head>
+<body>
+	여기는 부모창입니다.<br>
+	<button onclick="yyy()">창생성</button>	<!-- 이벤트 처리 : 특정이벤트발생 => 동작할 함수 호출 -->	
+	<button onclick="yyy2()">자식창 닫기</button>	<!-- onclick : 클릭시 이벤트 발생 -->
+	<button onclick="yyy3()">창닫기</button>	<!-- inline방식 이벤트 처리 , on발생 이벤트이름 : 처리할 함수이름 (이벤트핸들러) -->
+</body>
+</html>
