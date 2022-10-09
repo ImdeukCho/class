@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var itemList = [];
+	window.onload = function() {
+		var addBtr = document.querySelector("#add");
+		addBtr.addEventListener("click", addList);	
+	} // end function
+	
+	function addList() {
+		var item = document.querySelector("#item").value;
+		if (item != null) {
+			itemList.push(item);	// list에 배열추가
+			document.querySelector("#item").value = ""; // 텍스트내용 다시 빈칸으로
+			document.querySelector("#item").focus();	// 텍스트상자에 포커스 설정
+		}
+		showList();
+		console.log(itemList);
+	} // end function
+	
+	function showList() {
+		var list = "<ul>";
+		for (var i = 0; i < itemList.length; i++) {
+			console.log(itemList[i]);
+			list += "<li>" + itemList[i] + "</li>";
+		}
+		list += "</ul>";
+		console.log(list);
+		document.querySelector("#itemList").innerHTML = list;
+	}
+
+</script>
+</head>
+<body>
+	<input type="text" id="item" autofocus>
+	<button type="button" id="add" class="button">추가</button><br>
+	<div id="itemList"></div>
+</body>
+</html>

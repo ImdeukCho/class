@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 페이지 이동 막는 방법
+	window.onload = function() {
+		var userid = document.getElementsByName("userid").value;
+		var passwd = document.getElementsByName("passwd").value;
+		console.log(userid,passwd);
+		
+		var xxx = document.getElementById("xxx");
+		xxx.addEventListener("click", kkk, false);
+		
+		// false 안적어도 기본값적용
+		var myForm = document.getElementById("myForm");
+		myForm.addEventListener("submit", yyy); // 이벤트 버블링 (자식 -> 부모)
+	}// end function
+	
+	function kkk() {
+		console.log("버튼 클릭")
+	}
+	
+	function yyy()	{
+		event.preventDefault();
+		console.log("submit 취소");
+	}
+</script>
+</head>
+<body>
+	<form action="target.html" id="myForm">
+		아이디<input type="text" name="userid"><br>
+		비번<input type="text" name="passwd"><br>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+		<button id="xxx">클릭</button> <!-- form의 안에 있어야지 페이지이동됨 -->
+	</form>
+	<hr>
+	<!-- <button id="xxx">클릭</button><!-- form의 바깥 -->
+</body>
+</html>

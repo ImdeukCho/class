@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	
+	function xxx() {
+		console.log("AAAAAAAAAAAAAAAAAAA");
+		alert("xxx submit");
+		console.log("BBBBBBBBBBBBBBBBBBBB");
+	}
+	
+	function xxx2() {	// return false 이용 제출 금지
+		var id = document.getElementById("userid2").value;
+		var passwd = document.getElementById("passwd2").value;
+		var result = false;	// 호출한곳으로 리턴시킬 boolean값
+		
+		if (id.length>=3 && passwd.length !=0) {
+			result = true; // 계속 진행 제출
+		} else{
+			result = false; // 진행 금지
+			alert("xx2 에러");
+		}
+
+		return result;
+	}
+	
+	function xxx3() {	
+		var id = document.getElementById("userid3").value;
+		var passwd = document.getElementById("passwd3").value;
+		if (id.length !=0 && passwd.length !=0) {
+			alert("xx3 submit");
+		} else{
+			alert("xx3 에러");
+			event.preventDefault();	// action 금지
+		}
+	}
+	
+	function xxx4() {	
+		var id = document.getElementById("userid4").value;
+		var passwd = document.getElementById("passwd4").value;
+		console.log(id,"\t",passwd);
+		
+		if (id.length !=0 && passwd.length !=0) {
+			alert("xx4 submit");
+		} else{
+			alert("xx4 에러");
+			event.preventDefault();	// action 금지
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="target.html" onsubmit="xxx()"><!-- 인라인 방식 처리 submit이벤트 발생시 -->
+		아이디========1<input type="text" name="userid"><br>
+		비번========1<input type="text" name="passwd"><br>
+		<button>버튼</button><!-- xxx()호출 -->
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+	</form>
+	
+	<hr>
+	<form action="target.html" onsubmit="return xxx2()"><!-- return 주의 , 미사용시 false여도 페이지 이동됨-->
+		아이디========2<input type="text" name="userid" id="userid2"><br>
+		비번========2<input type="text" name="passwd" id="passwd2"><br>
+		<button>버튼</button>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+	</form>
+	
+	<hr>
+	<form action="target.html" onsubmit="xxx3()">
+		아이디========3<input type="text" name="userid" id="userid3"><br>
+		비번========3<input type="text" name="passwd" id="passwd3"><br>
+		<button>버튼</button>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+	</form>
+	
+	<hr>
+	<form action="target.html" id="test"><!-- 주의 -->
+		아이디========4<input type="text" name="userid" id="userid4"><br>
+		비번========4<input type="text" name="passwd" id="passwd4"><br>
+		<button onclick="xxx4()">버튼</button>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+	</form>
+</body>
+</html>

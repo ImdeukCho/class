@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 페이지 이동 중지
+	window.onload = function() {
+		var userid = document.getElementsByName("userid").value;
+		var passwd = document.getElementsByName("passwd").value;
+		console.log(userid,passwd);
+		
+		document.getElementById("xxx").addEventListener("click", function() {
+			console.log("버튼 클릭")
+		}, false);
+		
+		
+		var myForm = document.getElementById("myForm");
+		myForm.addEventListener("submit",aaa); // false 안적어도 정상작동 , 이벤트 버블링 (자식 -> 부모)
+	}// end function
+	
+	function aaa() {				// event를 넘겨 받음
+		alert()
+		event.preventDefault();		// 제출금지 
+		
+		console.log("submit 취소")
+		// return false;			// 안막힘 , addEventListener 사용시 event.preventDefault()로만 막힘.
+	}
+	
+
+</script>
+</head>
+<body>
+	<form action="target.html" id="myForm">
+		아이디<input type="text" name="userid"><br>
+		비번<input type="text" name="passwd"><br>
+		<input type="submit" value="로그인">
+		<input type="reset" value="취소"><br>
+		<button id="xxx">클릭</button> <!-- form의 안에 있어야지 페이지이동됨 -->
+	</form>
+	<hr>
+	<!-- <button id="xxx">클릭</button><!-- form의 바깥 -->
+</body>
+</html>
